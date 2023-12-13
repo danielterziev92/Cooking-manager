@@ -1,21 +1,30 @@
 from pathlib import Path
+from decouple import config as de_config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-36c5f^ee%ox*+*40c6@j)wvil0h5e&0&n8e0t*_kloom_ge*9h'
+SECRET_KEY = de_config('SECRET_KEY')
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-INSTALLED_APPS = [
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+)
+
+PROJECT_APPS = ()
+
+THIRD_PARTY_APPS = (
+    'rest_framework',
+)
+
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
