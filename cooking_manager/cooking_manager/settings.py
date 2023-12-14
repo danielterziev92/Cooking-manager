@@ -18,7 +18,9 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 )
 
-PROJECT_APPS = ()
+PROJECT_APPS = (
+    'cooking_manager.user_app.apps.UserAppConfig',
+)
 
 THIRD_PARTY_APPS = (
     'rest_framework',
@@ -90,3 +92,5 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user_app.BaseUser'
