@@ -15,6 +15,12 @@ class BaseUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
         default=True,
     )
 
+    is_staff = models.BooleanField(
+        default=False,
+        null=False,
+        blank=False,
+    )
+
     date_joined = models.DateTimeField(
         auto_now_add=True,
     )
