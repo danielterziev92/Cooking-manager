@@ -20,6 +20,7 @@ DJANGO_APPS = (
 
 PROJECT_APPS = (
     'cooking_manager.user_app.apps.UserAppConfig',
+    'cooking_manager.recipe.apps.RecipeConfig',
 )
 
 THIRD_PARTY_APPS = (
