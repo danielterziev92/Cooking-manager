@@ -4,7 +4,13 @@ from cooking_manager.recipe.category.serializers import RecipeCategorySerializer
 from cooking_manager.recipe.models import RecipeCategory
 
 
-class RecipeCategoryListCreateView(api_views.ListCreateAPIView):
+class RecipeCategoryListView(api_views.ListAPIView):
+    queryset = RecipeCategory.objects.all()
+    serializer_class = RecipeCategorySerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+
+class RecipeCategoryCreateView(api_views.CreateAPIView):
     queryset = RecipeCategory.objects.all()
     serializer_class = RecipeCategorySerializer
     permission_classes = (permissions.IsAuthenticated,)
