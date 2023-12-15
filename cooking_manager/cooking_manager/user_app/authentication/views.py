@@ -27,10 +27,6 @@ class UserRegister(generics.CreateAPIView):
 class UserLogin(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
-    def post(self, request, *args, **kwargs):
-        response = super().post(request, *args, **kwargs)
-        return Response(data={'message': 'User logged in successfully.'}, status=status.HTTP_200_OK)
-
 
 class UserLogout(APIView):
     permission_classes = (permissions.AllowAny,)
