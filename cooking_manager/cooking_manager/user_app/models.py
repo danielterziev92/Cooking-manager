@@ -1,10 +1,10 @@
 from django.db import models
-from django.contrib.auth import models as auth_models
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
 from cooking_manager.user_app.manager import UserAppManager
 
 
-class BaseUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
+class BaseUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         unique=True,
         null=False,
@@ -37,3 +37,8 @@ class Person(BaseUser):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+class Family(models.Model):
+    members = models.ManyToManyField(
+        Person, related_name='family_members', blank=True)
