@@ -15,6 +15,10 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
         default=True,
     )
 
+    is_staff = models.BooleanField(
+        default=False,
+    )
+
     date_joined = models.DateTimeField(
         auto_now_add=True,
     )
@@ -28,10 +32,10 @@ class BaseUser(AbstractBaseUser, PermissionsMixin):
 class Person(BaseUser):
     first_name = models.CharField(max_length=55)
     last_name = models.CharField(max_length=55)
-    recipes = models.ManyToManyField(
-        Recipe, related_name='authors', blank=True)
-    favorite_recipes = models.ManyToManyField(
-        Recipe, related_name='favorited', blank=True)
+    # recipes = models.ManyToManyField(
+    #     Recipe, related_name='authors', blank=True)
+    # favorite_recipes = models.ManyToManyField(
+    #     Recipe, related_name='favorited', blank=True)
     followers = models.ManyToManyField(
         'self', symmetrical=False, related_name='following', blank=True)
 
