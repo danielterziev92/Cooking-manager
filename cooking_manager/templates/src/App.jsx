@@ -7,6 +7,7 @@ import Register from "./components/User/Register";
 import Home from "./components/Home/Home";
 import FirtNav from "./components/FirstNav/FirstNav";
 import MainNav from "./components/MainNav/MainNav";
+import DishCarousel from "./components/DishCarousel/DishCarousel";
 // install react bootstrap : npm install react-bootstrap bootstrap
 // install router : npm install react-router-dom
 
@@ -16,6 +17,7 @@ function App() {
             <AuthProvider>
                 <FirtNav />
                 <MainNav />
+                <DishCarousel />
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='login/' element={<Login />} />
