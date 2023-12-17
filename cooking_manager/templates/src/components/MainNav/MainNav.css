@@ -1,0 +1,28 @@
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.submit-recipe {
+    background-color: #2ecc71;
+    border-radius: 20px;
+    padding: 8px 15px;
+}
