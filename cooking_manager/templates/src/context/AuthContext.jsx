@@ -40,6 +40,12 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const logoutUser = () => {
+        logout();
+        setAuthTokens(null);
+        setUser(null);
+    };
+
     useEffect(() => {
         if (loading) {
             updateToken(authTokens, setAuthTokens, setUser, setLoading);
@@ -62,7 +68,7 @@ export const AuthProvider = ({ children }) => {
         user,
         authTokens,
         loginUser,
-        logoutUser: logout,
+        logoutUser: logoutUser,
     };
 
     return (

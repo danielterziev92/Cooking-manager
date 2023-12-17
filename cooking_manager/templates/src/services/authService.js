@@ -24,6 +24,8 @@ export const login = async (email, password) => {
 
 export const logout = () => {
     delete client.defaults.headers.common["Authorization"];
+    localStorage.removeItem("authTokens");
+    localStorage.removeItem("userId");
 };
 
 export const updateToken = async (
